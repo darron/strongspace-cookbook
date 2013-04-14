@@ -1,0 +1,8 @@
+#!/bin/sh
+BACKUP_SERVER_FOLDER="<%= node.name %>"
+RSYNC_COMMAND="<%= @command %>"
+<% @directories.each do |dir| %>
+if [ -d "<%= dir %>" ]; then
+	$RSYNC_COMMAND <%= dir %> <%= @username %>@<%= @hostname %>:<%= @path %>/$BACKUP_SERVER_FOLDER
+fi
+<% end %>
