@@ -25,10 +25,6 @@ describe 'strongspace::default' do
   	assert_file "/etc/cron.daily/strongspace-rsync", "root", "root", "750"
   end
 
-  it "installs the rsync exclude file" do
-  	assert_file "/root/rsync-exclude", "root", "root", "640"
-  end
-
   it "installs a known hosts file for root" do
   	assert_file "/root/.ssh/known_hosts", "root", "root", "644"
   end
